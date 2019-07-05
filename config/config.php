@@ -4,6 +4,15 @@
  * Core element is for global configurations, such as specifying the service managers that will be loaded. The default
  * configuration options present a minimal install that will allow a site to be up and running immediately.
  */
+
+use WigeDev\JasperCore\Renderer\CLIRenderer;
+use WigeDev\JasperCore\Renderer\HtmlRenderer;
+use WigeDev\JasperCore\Renderer\JsonRenderer;
+use WigeDev\JasperCore\Renderer\ViewHelper\MetaHelper;
+use WigeDev\JasperCore\Renderer\ViewHelper\StylesheetHelper;
+use WigeDev\JasperCore\Renderer\ViewHelper\TitleHelper;
+use WigeDev\JasperCore\ServiceManager\ViewManager;
+
 return array(
     'core' => array(),
     'service_managers' => array(
