@@ -4,7 +4,7 @@
  * the framework itself for the heavy lifting.
  */
 
-use WigeDev\SimpleMVC\Core;
+use WigeDev\JasperCore\Core;
 
 /**
  * Set up relative paths. _ROOT_PATH_ is the path to the root of the application, and _SITE_PATH_ is the path to the
