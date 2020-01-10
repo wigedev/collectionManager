@@ -67,11 +67,12 @@ return array(
             )
         ),
         // More standard, folder is the module, page is the controller
-        'dashboard' => array(
-            'route' => '/:module:/:controller:',
+        'mvc' => array(
+            'route' => '/:module:/:controller:[/:action:]',
             'constraints'   => array(
                 'module'    => '[a-z]+',
-                'controller'    => '[a-z]+'
+                'controller'    => '[a-z]+',
+                'action'    => '[a-z]+'
             ),
             'defaults' => array(
                 'module' => 'dashboard',

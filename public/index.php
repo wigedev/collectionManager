@@ -6,11 +6,13 @@
 
 use WigeDev\JasperCore\Core;
 
+use function WigeDev\JasperCore\FW;
+
 /**
  * Set up relative paths. _ROOT_PATH_ is the path to the root of the application, and _SITE_PATH_ is the path to the
  * public folder.
  */
-define('_ROOT_PATH_', __DIR__ . DIRECTORY_SEPARATOR . '..');
+define('_ROOT_PATH_', dirname(__DIR__));
 
 /**
  * Load the composer autoloader
@@ -20,4 +22,5 @@ require_once(_ROOT_PATH_ . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR 
 /**
  * Initialize the framework.
  */
-Core::_init()->run();
+Core::_init();
+FW()->run();
