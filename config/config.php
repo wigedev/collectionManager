@@ -11,13 +11,9 @@ use WigeDev\JasperCore\Renderer\JsonRenderer;
 use WigeDev\JasperCore\Renderer\ViewHelper\MetaHelper;
 use WigeDev\JasperCore\Renderer\ViewHelper\StylesheetHelper;
 use WigeDev\JasperCore\Renderer\ViewHelper\TitleHelper;
-use WigeDev\JasperCore\ServiceManager\ViewManager;
 
 return array(
     'core' => array(),
-    'service_managers' => array(
-        'view' => new ViewManager(),
-    ),
     // Views control how different types of requests are displayed to the user. This lets a request for an html page, a
     // csv file and a json file all be handled by the same controller and action, and simply create the file in
     // different ways.
@@ -35,11 +31,9 @@ return array(
                 'extensions' => array('php', 'html', 'htm'),
                 'handler' => HtmlRenderer::class,
                 'helpers' => array(
-                    'meta' => new MetaHelper(),
+                    'meta' => new MetaHelper(), //TODO: These should be lazily instantiated
                     'title' => new TitleHelper(),
                     'stylesheet' => new StyleSheetHelper('meta'),
-                    'headscript' => new HeadScriptHelper('meta'),
-                    'opengraph' => new OpenGraphHelper('meta'),
                 )
             ),
             'json' => array(
@@ -54,7 +48,7 @@ return array(
     ),
     // Routes
     'routes' => array(
-        // For top level pages, this defaults to the Index module.
+        // For top level pages, this defaults to the Index module of the named controller.
         'default' => array(
             'route'         => '/[:controller:]',
             'constraints'   => array(
@@ -66,7 +60,7 @@ return array(
                 'action'    => 'index'
             )
         ),
-        // More standard, folder is the module, page is the controller
+        // More standard, folder is the module, page is the controller, subpage can be the action.
         'mvc' => array(
             'route' => '/:module:/:controller:[/:action:]',
             'constraints'   => array(
