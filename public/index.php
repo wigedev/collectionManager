@@ -13,17 +13,18 @@ use function WigeDev\JasperCore\FW;
  * public folder.
  */
 define('_ROOT_PATH_', dirname(__DIR__));
-
 /**
  * Load the composer autoloader
  */
 require_once(_ROOT_PATH_ . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php');
-
+/**
+ * Set up any features such as logging or dependency injection, and add them to the framework here.
+ */
 /**
  * Initialize the framework.
  */
 Core::_init();
 /**
- * Set up any features such as logging or dependency injection, and add them to the framework here.
+ * Execute the request
  */
 FW()->run();
