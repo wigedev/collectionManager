@@ -18,8 +18,13 @@ define('_ROOT_PATH_', dirname(__DIR__));
  */
 require_once(_ROOT_PATH_ . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php');
 /**
+ * Set up environment variables
+ */
+Core::bootstrap();
+/**
  * Set up any features such as logging or dependency injection, and add them to the framework here.
  */
+// TODO: This
 /**
  * Initialize the framework.
  */
