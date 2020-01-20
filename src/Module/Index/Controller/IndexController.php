@@ -1,6 +1,8 @@
 <?php
 namespace Application\Module\Index\Controller;
 
+use WigeDev\JasperCore\Module\ModuleController;
+
 /**
  * Class IndexController
  *
@@ -8,7 +10,7 @@ namespace Application\Module\Index\Controller;
  *
  * @package Application\Module\Index\Controller
  */
-class IndexController
+class IndexController extends ModuleController
 {
     /**
      * Default action for the default controller of the default module.

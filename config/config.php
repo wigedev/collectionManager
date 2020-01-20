@@ -13,7 +13,11 @@ use WigeDev\JasperCore\Renderer\ViewHelper\StylesheetHelper;
 use WigeDev\JasperCore\Renderer\ViewHelper\TitleHelper;
 
 return array(
-    'core' => array(),
+    'framework' => [
+        'version' => '1.0.0',
+        'errorModule' => 'Index',
+        'errorController' => 'Error',
+    ],
     // Views control how different types of requests are displayed to the user. This lets a request for an html page, a
     // csv file and a json file all be handled by the same controller and action, and simply create the file in
     // different ways.
@@ -21,19 +25,20 @@ return array(
         'default_country' => 'us',
         'default_lang' => 'en-us',
         'default_view_type' => 'html',
-        'default_layout' => 'layout/_layout.phtml',
+        'default_layout_path' => 'layout',
+        'default_layout_file' => '_default',
         'renderers' => array(
             'cli' => array( // Handler for requests from the command line
                 'extensions' => array('c l i'), // A special extension that can only be hit programatically
                 'handler' => CLIRenderer::class
             ),
             'html' => array(
-                'extensions' => array('php', 'html', 'htm'),
+                'extensions' => array('php', 'html', 'htm', '*'),
                 'handler' => HtmlRenderer::class,
                 'helpers' => array(
-                    'meta' => new MetaHelper(), //TODO: These should be lazily instantiated
-                    'title' => new TitleHelper(),
-                    'stylesheet' => new StyleSheetHelper('meta'),
+                    'meta' => MetaHelper::class,
+                    'title' => TitleHelper::class,
+                    'stylesheet' => StyleSheetHelper::class,
                 )
             ),
             'json' => array(
@@ -50,9 +55,9 @@ return array(
     'routes' => array(
         // For top level pages, this defaults to the Index module of the named controller.
         'default' => array(
-            'route'         => '/[:controller:]',
+            'route'         => '/[:module:]',
             'constraints'   => array(
-                'controller'    => '[a-z]+'
+                'module'    => '[a-z]+'
             ),
             'defaults'      => array(
                 'module'    => 'index',
