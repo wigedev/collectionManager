@@ -1,5 +1,5 @@
 {
-  "name": "wigedev/jasper",
+  "name": "jasperfw/jasper",
   "description": "A basic project template to enable installing Jasper with Composer",
   "license": "Apache-2.0",
   "type": "project",
@@ -12,8 +12,8 @@
   "require": {
     "php": ">=7.2",
     "psr/log": "1.0.*",
-    "wigedev/jasper-core": "dev-master",
-    "wigedev/jasper-farm": "dev-master"
+    "jasperfw/jasper-core": "dev-master",
+    "jasperfw/jasper-farm": "dev-master"
   },
   "require-dev": {
     "phpunit/phpunit": "~8.0"

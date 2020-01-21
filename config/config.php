@@ -5,12 +5,12 @@
  * configuration options present a minimal install that will allow a site to be up and running immediately.
  */
 
-use WigeDev\JasperCore\Renderer\CLIRenderer;
-use WigeDev\JasperCore\Renderer\HtmlRenderer;
-use WigeDev\JasperCore\Renderer\JsonRenderer;
-use WigeDev\JasperCore\Renderer\ViewHelper\MetaHelper;
-use WigeDev\JasperCore\Renderer\ViewHelper\StylesheetHelper;
-use WigeDev\JasperCore\Renderer\ViewHelper\TitleHelper;
+use JasperFW\JasperCore\Renderer\CLIRenderer;
+use JasperFW\JasperCore\Renderer\HtmlRenderer;
+use JasperFW\JasperCore\Renderer\JsonRenderer;
+use JasperFW\JasperCore\Renderer\ViewHelper\MetaHelper;
+use JasperFW\JasperCore\Renderer\ViewHelper\StylesheetHelper;
+use JasperFW\JasperCore\Renderer\ViewHelper\TitleHelper;
 
 return array(
     'framework' => [

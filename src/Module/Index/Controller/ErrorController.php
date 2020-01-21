@@ -2,7 +2,7 @@
 
 namespace Application\Module\Index\Controller;
 
-use WigeDev\JasperCore\Module\ModuleController;
+use JasperFW\JasperCore\Module\ModuleController;
 
 /**
  * Class ErrorController

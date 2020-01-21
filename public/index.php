@@ -4,9 +4,9 @@
  * the framework itself for the heavy lifting.
  */
 
-use WigeDev\JasperCore\Core;
+use JasperFW\JasperCore\Jasper;
 
-use function WigeDev\JasperCore\FW;
+use function JasperFW\JasperCore\J;
 
 /**
  * Set up relative paths. _ROOT_PATH_ is the path to the root of the application, and _SITE_PATH_ is the path to the
@@ -20,7 +20,7 @@ require_once(_ROOT_PATH_ . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR 
 /**
  * Set up environment variables
  */
-Core::bootstrap();
+Jasper::bootstrap();
 /**
  * Set up any features such as logging or dependency injection, and add them to the framework here.
  */
@@ -28,8 +28,8 @@ Core::bootstrap();
 /**
  * Initialize the framework.
  */
-Core::_init();
+Jasper::_init();
 /**
  * Execute the request
  */
-FW()->run();
+J()->run();

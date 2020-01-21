@@ -11,7 +11,7 @@ with an appropriate starting folder structure.
 Create a new site based on the JASPER framework using the following command:
 
     cd <path to folder where you want to install the site>
-    php composer create-project wigedev/jasper .
+    php composer create-project jasperfw/jasper .
     
 To run the site, point Apache or IIS virtual host to the `public` folder.
 
