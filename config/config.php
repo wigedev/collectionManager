@@ -55,23 +55,35 @@ return array(
     'routes' => array(
         // For top level pages, this defaults to the Index module of the named controller.
         'default' => array(
-            'route'         => '/[:module:]',
-            'constraints'   => array(
-                'module'    => '[a-z]+'
+            'route' => '/[:module:]',
+            'constraints' => array(
+                'module' => '[a-z]+',
             ),
-            'defaults'      => array(
-                'module'    => 'index',
-                'controller'=> 'index',
-                'action'    => 'index'
-            )
+            'defaults' => array(
+                'module' => 'index',
+                'controller' => 'index',
+                'action' => 'index',
+            ),
         ),
+        // Error handling
+        'errorHandling' => [
+            'route' => '/error/error:code:',
+            'constraints' => [
+                'code' => '[0-9]{3}',
+            ],
+            'defaults' => [
+                'module' => 'index',
+                'controller' => 'index',
+                'action' => 'error',
+            ],
+        ],
         // More standard, folder is the module, page is the controller, subpage can be the action.
         'mvc' => array(
             'route' => '/:module:/:controller:[/:action:]',
-            'constraints'   => array(
-                'module'    => '[a-z]+',
-                'controller'    => '[a-z]+',
-                'action'    => '[a-z]+'
+            'constraints' => array(
+                'module' => '[a-z]+',
+                'controller' => '[a-z]+',
+                'action' => '[a-z]+',
             ),
             'defaults' => array(
                 'module' => 'dashboard',
