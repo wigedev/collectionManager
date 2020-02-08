@@ -1,7 +1,7 @@
 <?php
 namespace Application\Module\Index\Controller;
 
-use JasperFW\JasperCore\Module\ModuleController;
+use JasperFW\JasperFW\Module\ModuleController;
 
 /**
  * Class IndexController

@@ -5,18 +5,16 @@
  * configuration options present a minimal install that will allow a site to be up and running immediately.
  */
 
-use JasperFW\JasperCore\Renderer\CLIRenderer;
-use JasperFW\JasperCore\Renderer\HtmlRenderer;
-use JasperFW\JasperCore\Renderer\JsonRenderer;
-use JasperFW\JasperCore\Renderer\ViewHelper\MetaHelper;
-use JasperFW\JasperCore\Renderer\ViewHelper\StylesheetHelper;
-use JasperFW\JasperCore\Renderer\ViewHelper\TitleHelper;
+use JasperFW\JasperFW\Renderer\CLIRenderer;
+use JasperFW\JasperFW\Renderer\JsonRenderer;
+use JasperFW\JasperFW\Renderer\TwigRenderer;
+use JasperFW\JasperFW\Renderer\ViewHelper\MetaHelper;
+use JasperFW\JasperFW\Renderer\ViewHelper\StylesheetHelper;
+use JasperFW\JasperFW\Renderer\ViewHelper\TitleHelper;
 
 return array(
     'framework' => [
         'version' => '1.0.0',
-        'errorModule' => 'Index',
-        'errorController' => 'Error',
     ],
     // Views control how different types of requests are displayed to the user. This lets a request for an html page, a
     // csv file and a json file all be handled by the same controller and action, and simply create the file in
@@ -25,21 +23,21 @@ return array(
         'default_country' => 'us',
         'default_lang' => 'en-us',
         'default_view_type' => 'html',
-        'default_layout_path' => 'layout',
+        'default_layout_path' => _ROOT_PATH_ . DS . 'layout',
         'default_layout_file' => '_default',
         'renderers' => array(
             'cli' => array( // Handler for requests from the command line
                 'extensions' => array('c l i'), // A special extension that can only be hit programatically
-                'handler' => CLIRenderer::class
+                'handler' => CLIRenderer::class,
             ),
             'html' => array(
                 'extensions' => array('php', 'html', 'htm', '*'),
-                'handler' => HtmlRenderer::class,
+                'handler' => TwigRenderer::class,
                 'helpers' => array(
                     'meta' => MetaHelper::class,
                     'title' => TitleHelper::class,
                     'stylesheet' => StyleSheetHelper::class,
-                )
+                ),
             ),
             'json' => array(
                 'extensions' => array('json'),

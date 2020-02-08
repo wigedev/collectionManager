@@ -30,3 +30,9 @@ fabric.properties
 #Composer
 composer.lock
 /vendor/
+
+# Logging
+/logs/
+
+# Dependency Injection
+/ditemp/
