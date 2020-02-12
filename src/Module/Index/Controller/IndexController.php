@@ -3,6 +3,8 @@ namespace Application\Module\Index\Controller;
 
 use JasperFW\JasperFW\Module\ModuleController;
 
+use function JasperFW\JasperFW\J;
+
 /**
  * Class IndexController
  *
@@ -17,6 +19,7 @@ class IndexController extends ModuleController
      */
     public function indexAction()
     {
-
+        // Set a value that will be displayed in the template or view file.
+        J()->response->setValue('pageTitle', 'Getting Started');
     }
 }

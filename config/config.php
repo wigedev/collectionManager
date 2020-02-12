@@ -20,9 +20,6 @@ return array(
     // csv file and a json file all be handled by the same controller and action, and simply create the file in
     // different ways.
     'view' => array(
-        'default_country' => 'us',
-        'default_lang' => 'en-us',
-        'default_view_type' => 'html',
         'default_layout_path' => _ROOT_PATH_ . DS . 'layout',
         'default_layout_file' => '_default',
         'renderers' => array(
