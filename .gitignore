@@ -36,3 +36,4 @@ composer.lock
 
 # Dependency Injection
 /ditemp/
+/mysql-ssl/

@@ -20,6 +20,11 @@ class IndexController extends ModuleController
     public function indexAction()
     {
         // Set a value that will be displayed in the template or view file.
-        J()->response->setValue('pageTitle', 'Getting Started');
+        J()->response->setValue('pageTitle', 'Welcome');
+    }
+
+    public function loginAction()
+    {
+
     }
 }
