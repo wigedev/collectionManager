@@ -10,5 +10,13 @@ use JasperFW\JasperFW\Module\ModuleController;
  */
 class ErrorController extends ModuleController
 {
+    public static function canView(): bool
+    {
+        return true;
+    }
 
+    public function __construct()
+    {
+        parent::__construct();
+    }
 }

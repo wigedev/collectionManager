@@ -1,6 +1,19 @@
 {% extends layout__file %}
 {% block head %}
     {{ parent() }}
+    <style>
+        .jumbotron {
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+        }
+
+        .jumbotron h1 {
+            font-style: italic;
+        }
+    </style>
 {% endblock %}
 {% block content %}
     <div class="jumbotron text-white rounded bg-dark">
